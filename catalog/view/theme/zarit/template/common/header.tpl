@@ -42,12 +42,18 @@
     <div id="logo"><a href="#"><img src="/catalog/view/theme/zarit/img/logo.png"</a></div>
     <div class="links">
       <ul>
-        <li><a href="#">О нас</a></li>
-        <li><a href="#">Оплата и доставка</a></li>
-        <li><a href="#">Контакты</a></li>
-        <li><a href="#">Помощь</a></li>
+        <li><a href="<?=$head_links['about']['url']?>"><?=$head_links['about']['title']?></a></li>
+        <li><a href="<?=$head_links['deliv']['url']?>"><?=$head_links['deliv']['title']?></a></li>
+        <li><a href="<?=$head_links['contact']['url']?>"><?=$head_links['contact']['title']?></a></li>
+        <li><a href="<?=$head_links['help']['url']?>"><?=$head_links['help']['title']?></a></li>
       </ul>
-      <div id="welcome"><a href="#">Вход</a>|<a href="#">Регистрация</a></div>
+      <div id="welcome">
+         <?php if (!$logged) { ?>
+        <?php echo $text_welcome; ?>
+        <?php } else { ?>
+        <?php echo $text_logged; ?>
+        <?php } ?>
+      </div>
     </div><!-- links -->
     <a href="#" id="cart">Товаров в корзине:<span id="cart-total">0 (0 руб)</span></a>
     <div class="info_block">

@@ -146,6 +146,17 @@ class ControllerCommonHeader extends Controller {
 			'module/currency',
 			'module/cart'
 		);
+
+		$head_links = array();
+		$this->language->load('information/information');      
+      	$this->load->model('catalog/information');
+
+      	$information_info = $this->model_catalog_information->getInformation(4);
+      	$this->data['head_links']['about'] = $this->getHeadLinks(4);
+      	$this->data['head_links']['deliv'] = $this->getHeadLinks(7);
+      	$this->data['head_links']['contact'] = $this->getHeadLinks(8);
+      	$this->data['head_links']['help'] = $this->getHeadLinks(9);
+
 				
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/common/header.tpl';
@@ -154,6 +165,14 @@ class ControllerCommonHeader extends Controller {
 		}
 		
     	$this->render();
-	} 	
+	}
+
+	public function getHeadLinks($id) {
+      	$information_info = $this->model_catalog_information->getInformation($id);
+		$url = $this->url->link('information/information', 'information_id=' . $id);
+		return array('url'=>$url, 'title'=> $information_info['title']);
+	}
 }
+
+
 ?>
