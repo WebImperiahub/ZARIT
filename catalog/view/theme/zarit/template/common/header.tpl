@@ -39,7 +39,7 @@
 </head>
 <body>
   <div id="header" class="wrap">
-    <div id="logo"><a href="#"><img src="catalog/view/theme/zarit/img/logo.png"</a></div>
+    <div id="logo"><a href="#"><img src="/catalog/view/theme/zarit/img/logo.png"</a></div>
     <div class="links">
       <ul>
         <li><a href="#">О нас</a></li>
