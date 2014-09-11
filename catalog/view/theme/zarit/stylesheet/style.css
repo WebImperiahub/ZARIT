@@ -539,7 +539,7 @@ h3>a:hover{text-decoration: none;}
 	padding: 3px 0 4px 40px;
 }
 /* popup_fon */
-.popup_fon{
+.popup_fon {
 	position: fixed;
 	z-index: 100;
 	width: 100%;
@@ -547,9 +547,13 @@ h3>a:hover{text-decoration: none;}
 	top: 0;
 	left: 0;
 	background: rgba(0, 0, 0, .5);
+	display: none;
+}
+.popup_fon.active {
+	display: block;
 }
 /* popup_cart */
-.popup_cart{
+.popup_cart {
 	width: 957px;
 	background: #fff;
 	position: absolute;
@@ -559,6 +563,10 @@ h3>a:hover{text-decoration: none;}
 	margin-left: -478px;
 	border-radius: 15px;
 	padding-bottom: 50px;
+	display: none;
+}
+.popup_cart.active {
+	display: block;
 }
 .popup_cart .close {
 	width: 16px;
