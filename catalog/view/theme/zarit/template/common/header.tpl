@@ -39,7 +39,7 @@
 </head>
 <body>
   <div id="header" class="wrap">
-    <div id="logo"><a href="#"><img src="/catalog/view/theme/zarit/img/logo.png"</a></div>
+    <div id="logo"><a href="/"><img src="/catalog/view/theme/zarit/img/logo.png"</a></div>
     <div class="links">
       <ul>
         <li><a href="<?=$head_links['about']['url']?>"><?=$head_links['about']['title']?></a></li>
@@ -68,46 +68,5 @@
     </div><!-- info_block -->
   </div><!-- header -->
   <div class="menu menu_top">
-    <ul>
-      <li>
-        <a href="#">IP-видеонаблюдение</a>
-        <div class="cctv">
-          <div>
-            <h5>IP-камеры</h5>
-            <ul>
-              <li><a href="#">Hikvision</a></li>
-              <li><a href="#">Dahua</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Видеорегистраторы (NVR)</h5>
-            <ul>
-              <li><a href="#">Hikvision</a></li>
-              <li><a href="#">Dahua</a></li>
-              <li><a href="#">Macroscop</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Программное обеспечение</h5>
-            <ul>
-              <li><a href="#">Macroscop</a></li>
-              <li><a href="#">Hikvision iVMS-4200</a></li>
-              <li><a href="#">Dahua NRV Client</a></li>
-            </ul>
-          </div>
-        </div><!-- cctv -->
-      </li>
-      <li>
-        <a href="#">Системы контроля и управления доступом</a>
-        <div class="" style="left: -238px;"></div><!-- -->
-      </li>
-      <li>
-        <a href="#">Аксессуары</a>
-        <div class="" style="left: -673px;"></div><!-- -->
-      </li>
-      <li>
-        <a href="#">услуги</a>
-        <div class="" style="right: -1px;"></div><!-- -->
-      </li>
-    </ul>
+ <?php echo $menu; ?>
   </div><!-- menu -->

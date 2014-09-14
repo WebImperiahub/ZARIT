@@ -68,7 +68,11 @@ class ControllerCommonFooter extends Controller {
 			}
 						
 			$this->model_tool_online->whosonline($ip, $this->customer->getId(), $url, $referer);
-		}		
+		}
+
+		$this->children = array(
+			'common/menu'			
+		);		
 		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/footer.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/common/footer.tpl';
