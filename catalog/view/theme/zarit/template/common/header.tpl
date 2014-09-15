@@ -17,9 +17,11 @@
 
   <link rel="stylesheet" href="/catalog/view/theme/zarit/stylesheet/style.css" type="text/css" media="screen, projection">
   <script type="text/javascript" src="/catalog/view/theme/zarit/js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="/catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
   <script type="text/javascript" src="/catalog/view/theme/zarit/js/jquery.magnifier.js"></script>
   <script type="text/javascript" src="/catalog/view/theme/zarit/js/jquery.flexslider-min.js"></script>
   <script type="text/javascript" src="/catalog/view/theme/zarit/js/jquery.formstyler.min.js"></script>
+  <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
   <script type="text/javascript" src="/catalog/view/theme/zarit/js/main.js"></script>
   <script type="text/javascript" src="/catalog/view/javascript/jquery/tabs.js"></script>
 
@@ -62,8 +64,9 @@
         <span class="tel">+7 (908)<span> 782 95 15</span>|</span>
         <span class="call_back">CallBack</span>
       </div>
+       
       <div id="search">
-        <input type="text" name="search" />
+        <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
         <div class="button-search">Поиск</div>
       </div>
     </div><!-- info_block -->

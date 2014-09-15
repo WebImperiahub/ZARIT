@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-
+<?php print_r($products); ?>
 <div class="wrap">
 	<h3><a href="#">IP-камеры</a></h3>
 	<div class="flexslider">

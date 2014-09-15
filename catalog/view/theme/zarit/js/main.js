@@ -20,7 +20,7 @@ $(document).ready(function(){
 	// (function($) {
 		// $(function() {
 		// 
-	$('input, select').styler();
+	$('input:not([name="rating"]), select').styler();
 		// 
 		// });
 	// })(jQuery);
