@@ -16,13 +16,14 @@ $(document).ready(function(){
 		});
 	}
 	 
-	 if ($('input, select').exists()) {
-	(function($) {
-		$(function() {
-		
-			$('input, select').styler();
-		
-		});
-	})(jQuery);
-	}
+	 // if ($('input, select').exists()) {
+	// (function($) {
+		// $(function() {
+		// 
+	$('input, select').styler();
+		// 
+		// });
+	// })(jQuery);
+	// }
+	$('#tabs a').tabs();
 });// ready

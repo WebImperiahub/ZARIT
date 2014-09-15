@@ -21,6 +21,7 @@
   <script type="text/javascript" src="/catalog/view/theme/zarit/js/jquery.flexslider-min.js"></script>
   <script type="text/javascript" src="/catalog/view/theme/zarit/js/jquery.formstyler.min.js"></script>
   <script type="text/javascript" src="/catalog/view/theme/zarit/js/main.js"></script>
+  <script type="text/javascript" src="/catalog/view/javascript/jquery/tabs.js"></script>
 
 
 

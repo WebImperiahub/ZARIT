@@ -284,6 +284,7 @@ class ControllerProductProduct extends Controller {
 			$this->data['manufacturer'] = $product_info['manufacturer'];
 			$this->data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id']);
 			$this->data['model'] = $product_info['model'];
+			$this->data['sku'] = $product_info['sku'];
 			$this->data['reward'] = $product_info['reward'];
 			$this->data['points'] = $product_info['points'];
 			
@@ -322,7 +323,11 @@ class ControllerProductProduct extends Controller {
 			}	
 						
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				$this->data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+				$tmpPrice = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+				$tmpPrice = explode(' ', trim($tmpPrice));
+
+				$this->data['price'] = $tmpPrice[0];
+				$this->data['price_symbol_right'] = $tmpPrice[1];
 			} else {
 				$this->data['price'] = false;
 			}
