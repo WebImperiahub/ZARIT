@@ -18,7 +18,7 @@ class ControllerCommonHome extends Controller {
 			// $parts = explode('_', (string)$this->request->get['path']);
 		// print_r(explode('_', (string)$this->request->get['path']));
 		
-		$this->catProducts(59);
+		$this->catProducts(60);
 		$this->catProducts(65);
 		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/home.tpl')) {

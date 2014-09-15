@@ -5,7 +5,9 @@ $(document).ready(function(){
 		$('.flexslider').flexslider({
 			animation: "slide",
 			itemWidth: 154,
-			itemMargin: 21
+			itemMargin: 21,
+			slideshow: false,
+			move: 1
 		});
 	}
 	if ($('.recommend').exists()) {
