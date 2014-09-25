@@ -16,6 +16,7 @@
 
 
   <link rel="stylesheet" href="/catalog/view/theme/zarit/stylesheet/style.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/catalog/view/theme/zarit/stylesheet/responsive.css" type="text/css" media="screen, projection">
   <script type="text/javascript" src="/catalog/view/theme/zarit/js/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" src="/catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
   <script type="text/javascript" src="/catalog/view/theme/zarit/js/jquery.magnifier.js"></script>
@@ -42,7 +43,7 @@
 </head>
 <body>
   <div id="header" class="wrap">
-    <div id="logo"><a href="/"><img src="/catalog/view/theme/zarit/img/logo.png"</a></div>
+    <div id="logo"><a href="/"><img src="/catalog/view/theme/zarit/img/logo.png"></a></div>
     <div class="links">
       <ul>
         <li><a href="<?=$head_links['about']['url']?>"><?=$head_links['about']['title']?></a></li>
@@ -58,16 +59,19 @@
         <?php } ?>
       </div>
     </div><!-- links -->
-    <a href="#" id="cart">Товаров в корзине:<span id="cart-total">0 (0 руб)</span></a>
+    <a href="#" id="cart"><span>Товаров в корзине: </span><span>0</span><span> (0 руб)</span></a>
     <div class="info_block">
-      <div>
+      <div class="phone">
         <span class="tel"><?php echo $phone['first']; ?><span> <?php echo $phone['last']; ?></span>|</span>
         <span class="call_back">CallBack</span>
       </div>
        
       <div id="search">
-        <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
-        <div class="button-search">Поиск</div>
+        <a href="#"></a>
+        <div>
+          <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
+          <div class="button-search">Поиск</div>
+        </div>
       </div>
     </div><!-- info_block -->
   </div><!-- header -->
