@@ -5,8 +5,8 @@ class ControllerCommonHome extends Controller {
 		$this->document->setDescription($this->config->get('config_meta_description'));
 		$this->load->model('catalog/product');
 		$this->load->model('tool/image'); 
-		// $this->language->load('information/information');      
-      	// $this->load->model('catalog/information');
+		$this->language->load('information/information');      
+      	$this->load->model('catalog/information');
 		$this->load->model('catalog/category');	
 
 
@@ -20,6 +20,11 @@ class ControllerCommonHome extends Controller {
 		
 		$this->catProducts(60);
 		$this->catProducts(65);
+		$this->catProducts(86);
+		usort($this->data['products'], "cmp");
+
+		$this->data['information_info'] = $this->model_catalog_information->getInformation(10);
+		// print_r($information_info);
 		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/home.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/common/home.tpl';
@@ -31,6 +36,8 @@ class ControllerCommonHome extends Controller {
 			'common/footer',
 			'common/header'
 		);
+
+		//10
 										
 		$this->response->setOutput($this->render());
 	}
@@ -38,17 +45,16 @@ class ControllerCommonHome extends Controller {
 	public function catProducts($id) {
 		$data = array(
 			'filter_category_id' => $id,
-			'start'              => 0,
-			'limit'              => 30
 		);
 				
 		$results = $this->model_catalog_product->getProducts($data);
 		//Вызов метода getFoundProducts должен проводится сразу же после getProducts
 		//только тогда он выдает правильное значения количества товаров
-		$product_total = $this->model_catalog_product->getFoundProducts();
+		// $product_total = $this->model_catalog_product->getFoundProducts();
 		$catInfo = $this->getHeadLinks($id);
 		$this->data['products'][$id]['url'] = $catInfo['url'];
 		$this->data['products'][$id]['title'] = $catInfo['title'];
+		$this->data['products'][$id]['sort'] = $catInfo['sort'];
 		
 		foreach ($results as $result) {
 			if ($result['image']) {
@@ -99,11 +105,21 @@ class ControllerCommonHome extends Controller {
 	}
 
 	public function getHeadLinks($id) {
-		$category_info = $this->model_catalog_category->getCategory($id);
+		$cat_info = $this->model_catalog_category->getCategory($id);
 		$url = $this->url->link('product/category', 'path=' . $id);
-		return array('url'=>$url, 'title'=> $category_info['name']);
+		return array('url'=>$url, 'title'=> $cat_info['name'], 'sort' => $cat_info['sort_order']);
 	}
 
+	
 
+
+
+}
+
+function cmp($a, $b) {
+    if ($a['sort'] == $b['sort']) {
+        return 0;
+    }
+    return ($a['sort'] < $b['sort']) ? -1 : 1;
 }
 ?>

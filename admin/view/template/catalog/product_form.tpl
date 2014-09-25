@@ -104,6 +104,11 @@
                 <?php } ?></td>
             </tr>
             <tr>
+              <td>Главное меню:<br><span class="help">Показывать товар в блоке на главной странице.</span></td>
+              <td>                <input type="checkbox" name="top_product" value="0">
+                </td>
+            </tr>
+            <tr>
               <td><a class="hidelink"><?php echo $text_hidelink; ?></a></td>
 			  <td></td>
             </tr>
