@@ -9,7 +9,7 @@
           <?php if (isset($category['children'][$i])) { ?>
           <?php $subCat = $category['children'][$i]; ?>
           <div>
-            <h5><?php echo $subCat['name']; ?></h5>
+            <h5><a href="<?php echo $subCat['href']; ?>"><?php echo $subCat['name']; ?></a></h5>
             <ul>
               <?php foreach($subCat['child'] as $grandchild) { ?>
                 <li><a href="<?php echo $grandchild['href']; ?>"><?php echo $grandchild['name']; ?></a></li>
