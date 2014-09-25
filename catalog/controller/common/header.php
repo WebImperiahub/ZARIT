@@ -8,7 +8,7 @@ class ControllerCommonHeader extends Controller {
 		} else {
 			$server = $this->config->get('config_url');
 		}
-
+		// $this->load->model('setting/setting');
 		$this->data['base'] = $server;
 		$this->data['description'] = $this->document->getDescription();
 		$this->data['keywords'] = $this->document->getKeywords();
@@ -53,6 +53,8 @@ class ControllerCommonHeader extends Controller {
 		$this->data['account'] = $this->url->link('account/account', '', 'SSL');
 		$this->data['shopping_cart'] = $this->url->link('checkout/cart');
 		$this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
+		$tel =  $this->config->get('config_telephone');
+		$this->data['phone'] = getLastN($tel);
 		
 		// Daniel's robot detector
 		$status = true;
@@ -130,5 +132,30 @@ class ControllerCommonHeader extends Controller {
 
 }
 
+function getLastN($str) {
+	$len = strlen($str);
+	$count = 0;
+	$firstPart = '';
+	$lastPart = '';
+	
+	for($i = $len - 1; $i >= 0; $i--) {
+		$c = $str[$i];
+		
+		if ($count < 7) {
+			$lastPart = $c . $lastPart;
+		} else {
+			$firstPart = $c . $firstPart;
+		}
+		
+		
+		if(is_numeric($c) && $count < 7) {
+			$count++;
+		}
+		
+		
+	}
+	
+	return array('last' => $lastPart, 'first' => $firstPart);
+}
 
 ?>

@@ -61,7 +61,7 @@
     <a href="#" id="cart">Товаров в корзине:<span id="cart-total">0 (0 руб)</span></a>
     <div class="info_block">
       <div>
-        <span class="tel">+7 (908)<span> 782 95 15</span>|</span>
+        <span class="tel"><?php echo $phone['first']; ?><span> <?php echo $phone['last']; ?></span>|</span>
         <span class="call_back">CallBack</span>
       </div>
        
