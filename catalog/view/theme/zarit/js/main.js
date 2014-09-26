@@ -23,8 +23,8 @@ $(document).ready(function(){
 	$('input:not([name="rating"]), select').styler();
 
 	$('#tabs a').tabs();
-	
-	correctManuSpace(); // correcting menu
+
+	setTimeout(correctManuSpace, 500); // correcting menu
 });// ready
 
 
@@ -38,9 +38,10 @@ function correctManuSpace() {
 		} else {
 
 			var elOffset = $(el).offset().left;
+			// console.log(elOffset);
 			var diffOffs = firstOffset - elOffset;
 			var $cctv = $(el).find('.cctv');
-
+			// console.log(diffOffs + '  ' + elOffset, el);
 			if(firstOffset != elOffset && !isNaN(diffOffs)) {
 				$cctv.css('left', diffOffs + 'px');
 			}

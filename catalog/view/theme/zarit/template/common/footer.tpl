@@ -20,22 +20,22 @@
         <div class="col6">Цена со скидкой</div>
       </div>
       <div class="table_row">
-        <div class="col1"><div class="img"><img src="img/cart1.png" alt="cart1" class="magnify" style="width:100px; height:100px;" data-magnifyby="7" /></div></div>
+        <div class="col1"><div class="img"><img src="/catalog/view/theme/zarit/img/cart1.png" alt="cart1" class="magnify" style="width:100px; height:100px;" data-magnifyby="7" /></div></div>
         <div class="col2"><a href="#">Поворотная купольная IP-видеокамера TSi-SDW211Z22</a></div>
         <div class="col3"><div class="number_of"><a href="#">&ndash;</a><input type="text" /><a href="#">+</a></div></div>
         <div class="col4">59000 руб</div>
         <div class="col5">Нет</div>
         <div class="col6">59000 руб</div>
-        <div><img src="img/cross.png" alt="cross" title="Удалить" class="remove" /></div>
+        <div><img src="/catalog/view/theme/zarit/img/cross.png" alt="cross" title="Удалить" class="remove" /></div>
       </div>
       <div class="table_row">
-        <div class="col1"><div class="img"><img src="img/cart2.png" alt="cart1" class="magnify" style="width:100px; height:100px;" data-magnifyby="7" /></div></div>
+        <div class="col1"><div class="img"><img src="/catalog/view/theme/zarit/img/cart2.png" alt="cart1" class="magnify" style="width:100px; height:100px;" data-magnifyby="7" /></div></div>
         <div class="col2"><a href="#">Антивандальная купольная IP-видеокамера TSi-DVm212F (3.6)</a></div>
         <div class="col3"><div class="number_of"><a href="#">&ndash;</a><input type="text" /><a href="#">+</a></div></div>
         <div class="col4">9900 руб</div>
         <div class="col5">Нет</div>
         <div class="col6">9900 руб</div>
-        <div><img src="img/cross.png" alt="cross" title="Удалить" class="remove" /></div>
+        <div><img src="/catalog/view/theme/zarit/img/cross.png" alt="cross" title="Удалить" class="remove" /></div>
       </div>
       <div class="table_foot">
         <div class="total">итого: <span>68900 pуб</span></div>
