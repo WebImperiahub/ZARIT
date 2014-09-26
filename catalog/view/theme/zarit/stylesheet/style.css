@@ -261,10 +261,13 @@ img {
 .cctv>div:first-child{margin: 0;}
 .cctv a{
 	display: block;
-	padding: 0 0 0 20px;
+	padding: 0 0 0 5px;
 	line-height: 1.6;
 	margin: 0 0 3px 0;
 	width: 195px;
+}
+.menu>ul>li>div ul a {
+	padding: 0 0 0 20px;
 }
 .cctv a:hover{
 	background: #f1f1f1;
