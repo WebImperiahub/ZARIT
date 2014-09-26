@@ -3,85 +3,98 @@
   </div><!-- menu -->
   <div id="footer">
     <div class="wrap">
-      <div class="foot_contact">
-        <h5>Наши контакты:</h5>
-        <div>
-          <div class="city">Белгород:<a>+7 (908) 782 95 15</a><a>+7 (910) 328 53 11</a></div>
-          <div class="city">Ростов на Дону:<a>+7 (938) 113 76 63</a></div>
-          <div class="city">Москва:<a>+7 (936) 450 40 98</a></div>
-        </div>
-        <p class="info_zarit"><a href="#">info@zarit.ru </a><br />с 9<sup>00</sup> до 18<sup>00</sup> <br /><span>(Московское время)</span></p>
-      </div><!-- foot_contact -->
-      <div class="foot_info">
-        <h5>Помощь</h5>
-        <ul>
-          <li><a href="#">Тех.поддержка</a></li>
-          <li><a href="#">Документация</a></li>
-          <li><a href="#">Дистрибутивы</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
-      </div><!-- foot_info -->
-      <div class="foot_info">
-        <h5>Оплата и доставка</h5>
-        <ul>
-          <li><a href="#">Условия оплаты</a></li>
-          <li><a href="#">Способы доставки</a></li>
-          <li><a href="#">Возврат товара</a></li>
-        </ul>
-      </div><!-- foot_info -->
-      <ul class="network">
-        <li><a href="mailto:#" class="vk"></a></li>
-        <li><a href="mailto:#" class="fb"></a></li>
-        <li><a href="mailto:#" class="gp"></a></li>
-      </ul>
-      <p class="copiright">&#169; 2014 <span>ZARIT</span>. Все права защищены. Копирование и переписывание информации с сайта запрещено!</p>
+      <?php echo $footer_info; ?>      
     </div><!-- wrap -->
   </div><!-- footer -->
   <div class="popup_fon"></div>
   <div class="popup_cart">
     <a href="#" class="close"></a>
     <h2>Корзина</h2>
-    <table>
-      <tr>
-        <th class="col1">Фото</th>
-        <th class="col2">Наименование</th>
-        <th class="col3">Количество</th>
-        <th class="col4">Цена за шт.</th>
-        <th class="col5">Скидка</th>
-        <th class="col6">Цена со скидкой</th>
-        <th></th>
-      </tr>
-      <tr>
-        <td><div class="img"><img src="/catalog/view/theme/zarit/img/cart1.png" alt="cart1" class="magnify" style="width:100px; height:100px;" data-magnifyby="7" /></div></td>
-        <td><a href="#">Поворотная купольная IP-видеокамера TSi-SDW211Z22</a></td>
-        <td><div class="number_of"><a href="#">&ndash;</a><input type="text" /><a href="#">+</a></div></td>
-        <td>59000 руб</td>
-        <td>Нет</td>
-        <td>59000 руб</td>
-        <td><img src="/catalog/view/theme/zarit/img/cross.png" alt="cross" title="Удалить" class="remove" /></td>
-      </tr>
-      <tr>
-        <td><div class="img"><img src="/catalog/view/theme/zarit/img/cart2.png" alt="cart1" class="magnify" style="width:100px; height:100px;" data-magnifyby="7" /></div></td>
-        <td><a href="#">Антивандальная купольная IP-видеокамера TSi-DVm212F (3.6)</a></td>
-        <td><div class="number_of"><a href="#">&ndash;</a><input type="text" /><a href="#">+</a></div></td>
-        <td>9900 руб</td>
-        <td>Нет</td>
-        <td>9900 руб</td>
-        <td><img src="/catalog/view/theme/zarit/img/cross.png" alt="cross" title="Удалить" class="remove" /></td>
-      </tr>
-      <tr class="total"><td colspan="7">итого: <span>68900 pуб</span></td></tr>
-    </table>
-    <div>
-      <a href="#" class="checkout">оформить заказ</a>
-      <a href="#" class="continue_shopping">продолжить покупки</a>
+    <div class="cart_table">
+      <div class="table_title">
+        <div class="col1">Фото</div>
+        <div class="col2">Наименование</div>
+        <div class="col3">Количество</div>
+        <div class="col4">Цена за шт.</div>
+        <div class="col5">Скидка</div>
+        <div class="col6">Цена со скидкой</div>
+      </div>
+      <div class="table_row">
+        <div class="col1"><div class="img"><img src="img/cart1.png" alt="cart1" class="magnify" style="width:100px; height:100px;" data-magnifyby="7" /></div></div>
+        <div class="col2"><a href="#">Поворотная купольная IP-видеокамера TSi-SDW211Z22</a></div>
+        <div class="col3"><div class="number_of"><a href="#">&ndash;</a><input type="text" /><a href="#">+</a></div></div>
+        <div class="col4">59000 руб</div>
+        <div class="col5">Нет</div>
+        <div class="col6">59000 руб</div>
+        <div><img src="img/cross.png" alt="cross" title="Удалить" class="remove" /></div>
+      </div>
+      <div class="table_row">
+        <div class="col1"><div class="img"><img src="img/cart2.png" alt="cart1" class="magnify" style="width:100px; height:100px;" data-magnifyby="7" /></div></div>
+        <div class="col2"><a href="#">Антивандальная купольная IP-видеокамера TSi-DVm212F (3.6)</a></div>
+        <div class="col3"><div class="number_of"><a href="#">&ndash;</a><input type="text" /><a href="#">+</a></div></div>
+        <div class="col4">9900 руб</div>
+        <div class="col5">Нет</div>
+        <div class="col6">9900 руб</div>
+        <div><img src="img/cross.png" alt="cross" title="Удалить" class="remove" /></div>
+      </div>
+      <div class="table_foot">
+        <div class="total">итого: <span>68900 pуб</span></div>
+      </div>
+    </div><!-- cart_table -->
+    <div class="without_clearance">
       <h4>Заказать без оформления</h4>
-      <p>Можно не заполнять никаких форм, а оставить номер телефона и наш консультант решит все вопросы по оформлению заказа.</p>
-      <form action="">
-        <input type="text" placeholder="+7 (XXX) XXX-XX-XX" />
+      <p class="clearance">Можно не заполнять никаких форм, а оставить номер телефона и наш консультант решит все вопросы по оформлению заказа.</p>
+      <form>
+        <div>
+          <input type="text" placeholder="+7 (XXX) XXX-XX-XX" />
+          <span>например: +7 (095) 414-51-23</span>
+        </div>
         <input type="button" value="Жду звонка" class="waiting_call" />
-        <span>например: +7 (095) 414-51-23</span>
       </form>
     </div>
+    <form class="universal">
+      <div>
+        <p>ФИО<span class="mandatory"></span></p>
+        <input type="text" />
+      </div>
+      <div>
+        <p>E-mail</p>
+        <input type="text" />
+        <span class="explanation">для отслеживания состояния заказа</span>
+      </div>
+      <div>
+        <p>Телефон<span class="mandatory"></span></p>
+        <input type="text" />
+      </div>
+      <div>
+        <p>Адрес<span class="mandatory"></span></p>
+        <input type="text" />
+      </div>
+      <div>
+        <p>Выбор способа доставки:</p>
+        <select>
+          <option value="">Вариант1</option>
+          <option value="">Вариант2</option>
+          <option value="">Вариант3</option>
+        </select>
+      </div>
+      <div>
+        <p>Выбор способа оплаты:</p>
+        <select>
+          <option value="">Вариант1</option>
+          <option value="">Вариант2</option>
+          <option value="">Вариант3</option>
+        </select>
+      </div>
+      <div>
+        <p>Коментарий к заказу</p>
+        <textarea rows="2"></textarea>
+      </div>
+      <div class="buttons">
+        <input class="continue_shopping" type="button" value="продолжить покупки" />
+        <input class="checkout" type="button" value="оформить заказ" />
+      </div>
+    </form>
   </div>
 </body><!-- -->
 </html><!-- -->

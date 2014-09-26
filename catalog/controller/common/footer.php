@@ -31,6 +31,10 @@ class ControllerCommonFooter extends Controller {
 			}
     	}
 
+    	$footr = $this->model_catalog_information->getInformation(11);
+		$this->data['footer_info'] = html_entity_decode($footr['description']);
+
+
 		$this->data['contact'] = $this->url->link('information/contact');
 		$this->data['return'] = $this->url->link('account/return/insert', '', 'SSL');
     	$this->data['sitemap'] = $this->url->link('information/sitemap');
