@@ -14,18 +14,36 @@ $(document).ready(function(){
 		$('.recommend').flexslider({
 			animation: "slide",
 			itemWidth: 158,
-			itemMargin: 17
+			itemMargin: 17,
+			minItems: 1,
+			maxItems: 5
 		});
 	}
-	 
-	 // if ($('input, select').exists()) {
-	// (function($) {
-		// $(function() {
-		// 
+
 	$('input:not([name="rating"]), select').styler();
-		// 
-		// });
-	// })(jQuery);
-	// }
+
 	$('#tabs a').tabs();
+	
+	correctManuSpace(); // correcting menu
 });// ready
+
+
+function correctManuSpace() {
+	var firstOffset = false;
+
+	$('.menu>ul>li').each(function(i, el) {
+		if (firstOffset === false) {
+
+			firstOffset = $(el).offset().left;
+		} else {
+
+			var elOffset = $(el).offset().left;
+			var diffOffs = firstOffset - elOffset;
+			var $cctv = $(el).find('.cctv');
+
+			if(firstOffset != elOffset && !isNaN(diffOffs)) {
+				$cctv.css('left', diffOffs + 'px');
+			}
+		}
+	});
+}

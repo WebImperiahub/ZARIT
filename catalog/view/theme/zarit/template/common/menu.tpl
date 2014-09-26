@@ -1,9 +1,26 @@
 <?php if ($categories) { ?>
     <ul>
+    <?php $counter = 0; $st = '';?>
      <?php foreach ($categories as $category) { ?>
       <li>
+      <?php $counter++; // ok, let it will be as in layuot
+        switch ($counter) {
+          case 2:
+            $st = ' style="left: -238px;" ';
+            break;
+          case 3:
+            $st = ' style="left: -670px;" ';
+            break;
+          case 4:
+            $st = ' style="right: -1px;left: initial;" ';
+            break;            
+          
+          default:
+            $st = '';
+            break;
+        } ?>
         <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
-        <div class="cctv">
+        <div class="cctv" <?php echo $st; ?>>
         <?php if (isset($category['children'])) { ?>
          <?php for ($i = 0; $i < count($category['children']); $i++) { ?>
           <?php if (isset($category['children'][$i])) { ?>
