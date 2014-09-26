@@ -16,7 +16,7 @@ $(document).ready(function() {
 		if (e.keyCode == 13) {
 			url = $('base').attr('href') + 'index.php?route=product/search';
 			 
-			var search = $('input[name=\'search\']').attr('value');
+			var search = $('input[name=\'search\']').val();
 			
 			if (search) {
 				url += '&search=' + encodeURIComponent(search);
