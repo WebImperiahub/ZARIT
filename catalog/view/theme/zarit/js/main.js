@@ -24,6 +24,11 @@ $(document).ready(function(){
 
 	$('#tabs a').tabs();
 
+	$('.add_cart').on('click', function(e) {
+		e.preventDefault();
+		addToCart($(this).attr('id'));
+	});
+
 	setTimeout(correctManuSpace, 500); // correcting menu
 });// ready
 

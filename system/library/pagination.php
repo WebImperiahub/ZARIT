@@ -6,11 +6,11 @@ class Pagination {
 	public $num_links = 10;
 	public $url = '';
 	public $text = 'Showing {start} to {end} of {total} ({pages} Pages)';
-	public $text_first = '|&lt;';
-	public $text_last = '&gt;|';
-	public $text_next = '&gt;';
-	public $text_prev = '&lt;';
-	public $style_links = 'links';
+	public $text_first = '<img src="/catalog/view/theme/zarit/img/arrow2_l.png" alt="arrow2_l">';
+	public $text_last = '<img src="/catalog/view/theme/zarit/img/arrow2.png" alt="arrow2">';
+	public $text_next = '<img src="/catalog/view/theme/zarit/img/arrow.png" alt="arrow">';
+	public $text_prev = '<img src="/catalog/view/theme/zarit/img/arrow_l.png" alt="arrow_l">';
+	public $style_links = 'links_nav';
 	public $style_results = 'results';
 	 
 	public function render() {

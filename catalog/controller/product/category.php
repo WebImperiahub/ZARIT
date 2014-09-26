@@ -46,7 +46,7 @@ class ControllerProductCategory extends Controller {
    		$this->data['breadcrumbs'][] = array(
        		'text'      => $this->language->get('text_home'),
 			'href'      => $this->url->link('common/home'),
-       		'separator' => false
+       		'separator' => $this->language->get('text_separator')
    		);	
 			
 		if (isset($this->request->get['path'])) {
@@ -232,7 +232,12 @@ class ControllerProductCategory extends Controller {
 				}
 				
 				if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+					$tmpPrice = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+						$tmpPrice = explode(' ', trim($tmpPrice));
+
+						$price = $tmpPrice[0];
+						$price_symbol_right = $tmpPrice[1];
+
 				} else {
 					$price = false;
 				}
@@ -261,6 +266,7 @@ class ControllerProductCategory extends Controller {
 					'name'        => $result['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, 300) . '..',
 					'price'       => $price,
+					'price_symbol_right' => $price_symbol_right,
 					'special'     => $special,
 					'tax'         => $tax,
 					'rating'      => $result['rating'],
@@ -406,9 +412,9 @@ class ControllerProductCategory extends Controller {
 				$this->template = 'default/template/product/category.tpl';
 			}
 			
+				// 'common/column_left',
+				// 'common/column_right',
 			$this->children = array(
-				'common/column_left',
-				'common/column_right',
 				'common/content_top',
 				'common/content_bottom',
 				'common/footer',
