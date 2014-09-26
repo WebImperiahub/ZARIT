@@ -108,6 +108,8 @@ class ControllerCommonHeader extends Controller {
       	$this->load->model('catalog/information');
 
       	$information_info = $this->model_catalog_information->getInformation(4);
+      	$phone = $this->model_catalog_information->getInformation(12);
+      	$this->data['phone_head'] = html_entity_decode($phone['description']);
       	$this->data['head_links']['about'] = $this->getHeadLinks(4);
       	$this->data['head_links']['deliv'] = $this->getHeadLinks(7);
       	$this->data['head_links']['contact'] = $this->getHeadLinks(8);

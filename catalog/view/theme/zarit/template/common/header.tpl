@@ -62,7 +62,7 @@
     <a href="#" id="cart"><span>Товаров в корзине: </span><span>0</span><span> (0 руб)</span></a>
     <div class="info_block">
       <div class="phone">
-        <span class="tel"><?php echo $phone['first']; ?><span> <?php echo $phone['last']; ?></span>|</span>
+        <?php echo $phone_head; ?><!-- <span class="tel"><?php echo $phone['first']; ?><span> <?php echo $phone['last']; ?></span>|</span> -->
         <span class="call_back">CallBack</span>
       </div>
        
