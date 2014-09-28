@@ -259,7 +259,9 @@ class ControllerProductCategory extends Controller {
 				} else {
 					$rating = false;
 				}
-								
+
+				$prodParents = $this->model_catalog_product->getProductCats($result['product_id']);
+								// print_r($result);die();
 				$this->data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
@@ -271,7 +273,7 @@ class ControllerProductCategory extends Controller {
 					'tax'         => $tax,
 					'rating'      => $result['rating'],
 					'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+					'href'        => $this->url->link('product/product', 'path=' . $prodParents . '&product_id=' . $result['product_id'])
 				);
 			}
 			
@@ -307,6 +309,18 @@ class ControllerProductCategory extends Controller {
 			);
 
 			$this->data['sorts'][] = array(
+				'text'  => $this->language->get('text_manufacturer_asc'),
+				'value' => 'manufacturer-ASC',
+				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=manufacturer&order=ASC' . $url)
+			);
+
+			$this->data['sorts'][] = array(
+				'text'  => $this->language->get('text_manufacturer_desc'),
+				'value' => 'manufacturer-DESC',
+				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=manufacturer&order=DESC' . $url)
+			);
+
+			$this->data['sorts'][] = array(
 				'text'  => $this->language->get('text_price_asc'),
 				'value' => 'p.price-ASC',
 				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price&order=ASC' . $url)
@@ -332,17 +346,7 @@ class ControllerProductCategory extends Controller {
 				);
 			}
 			
-			$this->data['sorts'][] = array(
-				'text'  => $this->language->get('text_model_asc'),
-				'value' => 'p.model-ASC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=ASC' . $url)
-			);
-
-			$this->data['sorts'][] = array(
-				'text'  => $this->language->get('text_model_desc'),
-				'value' => 'p.model-DESC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
-			);
+			
 			
 			$url = '';
 			

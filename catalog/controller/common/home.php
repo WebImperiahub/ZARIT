@@ -52,6 +52,7 @@ class ControllerCommonHome extends Controller {
 		//только тогда он выдает правильное значения количества товаров
 		// $product_total = $this->model_catalog_product->getFoundProducts();
 		$catInfo = $this->getHeadLinks($id);
+		// echo $id . '<br>'; print_r($catInfo); exit();
 		$this->data['products'][$id]['url'] = $catInfo['url'];
 		$this->data['products'][$id]['title'] = $catInfo['title'];
 		$this->data['products'][$id]['sort'] = $catInfo['sort'];
@@ -88,7 +89,8 @@ class ControllerCommonHome extends Controller {
 			}
 
 			$url = '';
-				
+			$prodParents = $this->model_catalog_product->getProductCats($result['product_id']);
+				// echo $prodParents . '<br>';
 			$this->data['products'][$id][] = array(
 				'product_id'  => $result['product_id'],
 				'thumb'       => $image,
@@ -99,7 +101,7 @@ class ControllerCommonHome extends Controller {
 				'tax'         => $tax,
 				'rating'      => $result['rating'],
 				'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-				'href'        => $this->url->link('product/product', 'path=' . $catInfo['parent_id'] . '_' . $id . '&product_id=' . $result['product_id'] . $url)
+				'href'        => $this->url->link('product/product', 'path=' . $prodParents . '&product_id=' . $result['product_id'] . $url)
 			);
 		}
 	}

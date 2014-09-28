@@ -43,14 +43,14 @@ class ControllerCommonMenu extends Controller {
 					foreach ($grandchildren as $grandchild) {
 						$grandchildren_data[] = array(
 							'name'  => $grandchild['name'],
-							'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_'. $child['category_id'] . '_' . $grandchild['category_id'])	
+							'href'  => $this->url->link('product/category', 'path=' . $child['category_id'] . '_' . $grandchild['category_id'])	
 						);
 					}
 
 									
 					$children_data[] = array(
 						'name'  => $child['name'],
-						'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id']),
+						'href'  => $this->url->link('product/category', 'path=' .$child['category_id']),
 						'child' => $grandchildren_data
 					);						
 				}
