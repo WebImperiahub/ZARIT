@@ -88,7 +88,7 @@ class ControllerCommonHome extends Controller {
 			}
 
 			$url = '';
-							
+				
 			$this->data['products'][$id][] = array(
 				'product_id'  => $result['product_id'],
 				'thumb'       => $image,
@@ -99,15 +99,16 @@ class ControllerCommonHome extends Controller {
 				'tax'         => $tax,
 				'rating'      => $result['rating'],
 				'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-				'href'        => $this->url->link('product/product', 'path=' . $id . '&product_id=' . $result['product_id'] . $url)
+				'href'        => $this->url->link('product/product', 'path=' . $catInfo['parent_id'] . '_' . $id . '&product_id=' . $result['product_id'] . $url)
 			);
 		}
 	}
 
 	public function getHeadLinks($id) {
 		$cat_info = $this->model_catalog_category->getCategory($id);
-		$url = $this->url->link('product/category', 'path=' . $id);
-		return array('url'=>$url, 'title'=> $cat_info['name'], 'sort' => $cat_info['sort_order']);
+		// print_r($cat_info);
+		$url = $this->url->link('product/category', 'path=' . $cat_info['parent_id'] . '_' . $id);
+		return array('url'=>$url, 'title'=> $cat_info['name'], 'sort' => $cat_info['sort_order'], 'parent_id' => $cat_info['parent_id']);
 	}
 
 	
