@@ -29,7 +29,7 @@ $(document).ready(function(){
 		addToCart($(this).attr('id'));
 	});
 
-	setTimeout(correctManuSpace, 500); // correcting menu
+	// setTimeout(correctManuSpace, 500); // correcting menu
 });// ready
 
 
