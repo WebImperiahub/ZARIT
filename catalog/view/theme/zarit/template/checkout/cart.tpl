@@ -41,7 +41,7 @@
       
       <div class="table_foot">
         <div><a href="#" class="continue_shopping">продолжить покупки</a></div>
-        <div class="total">итого: <span>68900 pуб</span></div>
+        <div class="total">итого: <span><?php $endT = end($totals); echo $endT['text']; ?></span></div>
       </div>
     </div><!-- cart_table -->
     <div class="special_offer">

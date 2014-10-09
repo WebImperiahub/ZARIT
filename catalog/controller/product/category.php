@@ -45,7 +45,7 @@ class ControllerProductCategory extends Controller {
 
    		$this->data['breadcrumbs'][] = array(
        		'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home'),
+			'href'      => '/',//$this->url->link('common/home'),
        		'separator' => $this->language->get('text_separator')
    		);	
 			
@@ -235,8 +235,9 @@ class ControllerProductCategory extends Controller {
 					$tmpPrice = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
 						$tmpPrice = explode(' ', trim($tmpPrice));
 
-						$price = $tmpPrice[0];
-						$price_symbol_right = $tmpPrice[1];
+						$last = array_pop($tmpPrice);
+						$price = implode(' ', $tmpPrice);
+						$price_symbol_right = $last;
 
 				} else {
 					$price = false;

@@ -21,7 +21,7 @@ class ModelCatalogProduct extends Model {
 	}
 
 	public function getProductCats($id) {
-		$query = $this->db->query("SELECT GROUP_CONCAT(`c`.`category_id`  ORDER BY `c`.`category_id` ASC SEPARATOR '_') AS conc FROM `oc_category` `c` LEFT JOIN `oc_product_to_category` `p2c` ON `c`.`category_id` = `p2c`.`category_id` WHERE `p2c`.`product_id` = '" . $id . "' AND `c`.`parent_id` <> 0");
+		$query = $this->db->query("SELECT GROUP_CONCAT(`c`.`category_id`  ORDER BY `c`.`category_id` ASC SEPARATOR '_') AS conc FROM `oc_category` `c` LEFT JOIN `oc_product_to_category` `p2c` ON `c`.`category_id` = `p2c`.`category_id` WHERE `p2c`.`product_id` = '" . $id . "'"); // AND `c`.`parent_id` <> 0
 
 		if ($query->num_rows) {
 			return $query->row['conc'];

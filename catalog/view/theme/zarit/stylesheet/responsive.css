@@ -3,6 +3,7 @@
 	#header{padding: 0 0 14px 0;width: 980px;}
 	.wrap{
 		width: 956px;
+		margin: 0 auto;
 	}
 	#logo{
 		width: 203px;
@@ -30,13 +31,87 @@
 	.links #welcome a:first-child{margin: 0 18px 0 0;}
 	.info_block{
 		float: right;
+		margin: 25px 0 0 0;
 		border-left: 1px solid #9f9f9f;
 		border-right: 1px solid #9f9f9f;
-		margin: 24px 0 0 0;
 		width: 438px;
 	}
+	/* sing_up */
+	.sing_up>div{
+		content: '';
+		clear: both;
+		display: block;
+	}
+	.sing_up>div>p{
+		float: left;
+		width: 150px;
+		margin: 5px 10px 17px 0;
+	}
+	.sing_up>div>input[type=text]{float: left;width: 455px;}
+	.sing_up>div>input[type=password]{float: left;width: 160px;}
+	.sing_up .checkout{margin: 50px 0 0 0;}
+	.sing_up {padding: 0 0 100px 0;}
+	/* personal_account */
+	.personal_account{min-height: 300px;}
+}
+@media (min-width: 320px) and (max-width: 479px){
+	.wrap{padding: 0 10px;}
+	#header{padding: 15px 10px 0 10px;}
+	#welcome{padding: 0 12px;}
+}
+@media (min-width: 320px) and (max-width: 759px){
+	.sing_up>div>input{width: 100%;}
+	.personal_account{text-align: center}
+	.personal_account .disk{text-align: left;display: inline-block;}
+}
+@media (min-width: 480px) and (max-width: 759px){
+	.content_nav{display: none}
+	.wrap{padding: 0 20px;}
+}
+@media(max-width: 759px){
+	.menu_bot{display: none;}
+	#footer{border-top: 1px solid #e07b01;}
+	.sing_up{padding: 0 0 40px 0;}
+	.sing_up .radio_choice{width: 290px;margin: 43px auto 0 auto;}
+	.sing_up .checkout{display: block;margin: 50px auto 0 auto;}
+}
+@media (min-width: 760px){
+	/* content_nav */
+	.content_nav:after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+	.content_nav{margin: 0 0 20px;}
+	.breadcrumb{color: #b4b4b4;margin: 16px 0 0 10px;font-size: 13px;font-weight: bold;float: left;}
+	.breadcrumb a{color: #3d3d3d;text-decoration: underline;font-weight: normal;}
+	.breadcrumb a:hover{text-decoration: none;}
+	.breadcrumb span{color: #378fe1;font-weight: normal;}
+	.content_nav .limit{float: right;font-size: 12px;margin: 15px 0 0 0;}
+	.content_nav .limit li{float: left;margin: 0 0 0 12px;}
+	.content_nav .limit a{text-decoration: underline;font-size: 13px;}
+	.content_nav .limit a:hover, .content_nav .limit a.active{text-decoration: none;}
+	.content_nav .sort{
+		float: right;
+		margin: 8px 50px 0 0;
+		font-size: 12px;
+	}
+	.content_nav .sort .jq-selectbox{
+		width: 165px;
+		margin: 0 0 0 5px;
+	}
+}
+@media (min-width: 760px) and (max-width: 999px){
+	.wrap{padding: 0 20px;}
+	/* sing_up */
+	.sing_up{padding: 0 0 100px 0;}
+	.sing_up .radio_choice{margin: 43px 0 0 0;}
+	.sing_up .checkout{margin: 50px 0 0 0;}
+	.sing_up input[type=text], .sing_up input[type=password]{width: 415px;}
+	.personal_account{min-height: 200px;}
 }
 @media (max-width: 999px){
+	.content_nav{display: none}
 	/* header*/
 	#header{
 		padding: 15px 0 0 0;
@@ -56,14 +131,5 @@
 	}
 	#welcome a{text-decoration: underline;}
 	#welcome a:hover{text-decoration: none;}
-}
-@media (min-width: 320px) and (max-width: 479px){
-	/* header*/
-	#header{width: 290px;}
-	#welcome{padding: 0 12px;}
-}
-@media (min-width: 480px) and (max-width: 600px){
-	/* header*/
-	#header{width: 380px;}
-	#welcome{padding: 0 5px;}
+	
 }

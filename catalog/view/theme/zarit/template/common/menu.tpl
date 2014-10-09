@@ -3,7 +3,7 @@
     <?php $counter = 0; $st = '';?>
      <?php foreach ($categories as $category) { ?>
       <li>
-      <?php $counter++; // ok, let it will be as in layuot
+      <?php /*$counter++; // ok, let it will be as in layuot
         switch ($counter) {
           case 2:
             $st = ' style="left: -238px;" ';
@@ -18,9 +18,9 @@
           default:
             $st = '';
             break;
-        } ?>
+        } */?>
         <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
-        <div class="cctv" <?php echo $st; ?>>
+        <div class="drop_down">
         <?php if (isset($category['children'])) { ?>
          <?php for ($i = 0; $i < count($category['children']); $i++) { ?>
           <?php if (isset($category['children'][$i])) { ?>

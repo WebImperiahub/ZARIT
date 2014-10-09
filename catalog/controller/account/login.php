@@ -107,8 +107,8 @@ class ControllerAccountLogin extends Controller {
 
       	$this->data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home'),       	
-        	'separator' => false
+			'href'      => '/',//$this->url->link('common/home'),       	
+        	'separator' => $this->language->get('text_separator')
       	);
   
       	$this->data['breadcrumbs'][] = array(
@@ -120,7 +120,7 @@ class ControllerAccountLogin extends Controller {
       	$this->data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_login'),
 			'href'      => $this->url->link('account/login', '', 'SSL'),      	
-        	'separator' => $this->language->get('text_separator')
+        	'separator' => false//$this->language->get('text_separator')
       	);
 				
     	$this->data['heading_title'] = $this->language->get('heading_title');
